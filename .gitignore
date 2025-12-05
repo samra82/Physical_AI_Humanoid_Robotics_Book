@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+
+# Node.js (for Docusaurus potentially)
+node_modules/
+dist/
+build/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
+
+# Node.js (for Docusaurus potentially)
+node_modules/
+dist/
+build/
+*.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Universal
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+.env*
