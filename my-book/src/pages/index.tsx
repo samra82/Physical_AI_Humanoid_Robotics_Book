@@ -1,9 +1,9 @@
 import type {ReactNode} from 'react';
-import clsx from 'clsx';
+import Lottie from "lottie-react";
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+// import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -11,21 +11,42 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
+    <header className={styles.heroSection}>
+  <div className={styles.heroContainer}>
+
+    {/* LEFT COLUMN */}
+    <div className={styles.heroText}>
+      <div>
+      <Heading as="h1" className={styles.title}>
+        {siteConfig.title}
+      </Heading>
+
+      <p className={styles.tagline}>
+        {siteConfig.tagline}
+      </p>
       </div>
-    </header>
+      <div className={styles.buttons}>
+        <Link
+          className="button button--secondary button--lg"
+          to="/docs/intro/introduction"
+        >
+          Start Reading 
+        </Link>
+      </div>
+    </div>
+
+    {/* RIGHT COLUMN (Lottie Animation) */}
+    <div className={styles.heroImageWrapper}>
+      <Lottie
+        animationData={require("@site/static/lottie/robot-animated.json")}
+        className={styles.heroLottie}
+        loop
+      />
+    </div>
+
+  </div>
+</header>
+
   );
 }
 
@@ -36,9 +57,6 @@ export default function Home(): ReactNode {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }

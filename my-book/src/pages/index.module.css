@@ -3,21 +3,68 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
+.heroSection {
+  padding: 2rem 1rem;
+background: linear-gradient(to bottom, #4b0082, #233489);
 
-.buttons {
+}
+.heroText_ryRM{
+  align-items: flex-start;
+}
+.heroContainer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroText {
+  flex: 1;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffd700;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin: 1rem 0 2rem;
+  opacity: 0.85;
+  color: white;
+}
+
+.heroImageWrapper {
+  flex: 1;
+  display: flex;
   justify-content: center;
+}
+
+.heroLottie {
+  width: 100%;
+  max-width: 450px;
+}
+:hover.button.button--secondary{
+  color:#4b0082 ;
+}
+/* RESPO STYLES */
+@media (max-width: 900px) {
+  .heroContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+  .tagline {
+    font-size: 1.1rem;
+  }
+  .heroLottie {
+    max-width: 350px;
+  }
 }
